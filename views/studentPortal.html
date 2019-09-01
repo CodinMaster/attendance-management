@@ -76,14 +76,14 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="#" class="tablinks" onclick="openCity(event, 'markAttendance')">Mark Attendance</a></li>
                 <li><a href="#" class="tablinks" onclick="openCity(event, 'viewAttendance')">View Attendance</a></li>
-                <li>&nbsp;Hi {Username} ! &nbsp; &nbsp;</li>
+                <li>&nbsp;Hi Student ! &nbsp; &nbsp;</li>
                 <li><a href="#" onclick="logOut()"><i class="material-icons">logout</i></a></li>
             </ul>
         </div>
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-        <li> &nbsp;&nbsp;Hi, {Username} !</li>
+        <li> &nbsp;&nbsp;Hi, Student !</li>
         <li><a href="#" class="tablinks" onclick="openCity(event, 'markAttendance')">Mark Attendance</a></li>
         <li><a href="#" class="tablinks" onclick="openCity(event, 'viewAttendance')">View Attendance</a></li>
         <li><a href="#" class="tablinks" onclick="logOut()">Logout</a></li>
@@ -97,14 +97,14 @@
                         <div class="card-content">
                             <div class="row">
                                 <div class="col s6">
-                                    <span id="subName_1" class="subName">Numerical Analysis</span>
+                                    <span id="subName_1" class="subName"></span>
                                 </div>
                                 <div class="col s3">
-                                    <span id="classesAttended_1" class="classesAttended">5</span>&nbsp;/&nbsp;<span
-                                        id="totalClasses_1" class="totalClasses">20</span>
+                                    <span id="classesAttended_1" class="classesAttended"></span>&nbsp;/&nbsp;<span
+                                        id="totalClasses_1" class="totalClasses"></span>
                                 </div>
                                 <div class="col s3">
-                                    <span id="per_1">25%</span>
+                                    <span id="per_1"></span>
                                 </div>
                             </div>
                         </div>
@@ -117,14 +117,14 @@
                         <div class="card-content">
                             <div class="row">
                                 <div class="col s6">
-                                    <span id="subName_2" class="subName">Operating System</span>
+                                    <span id="subName_2" class="subName"></span>
                                 </div>
                                 <div class="col s3">
-                                    <span id="classesAttended_2" class="classesAttended">13</span>&nbsp;/&nbsp;<span
-                                        id="totalClasses_2" class="totalClasses">19</span>
+                                    <span id="classesAttended_2" class="classesAttended"></span>&nbsp;/&nbsp;<span
+                                        id="totalClasses_2" class="totalClasses"></span>
                                 </div>
                                 <div class="col s3">
-                                  <span id="per_2">89%</span>
+                                  <span id="per_2"></span>
                                 </div>
                             </div>
                         </div>
@@ -137,14 +137,14 @@
                         <div class="card-content">
                             <div class="row">
                                 <div class="col s6">
-                                    <span id="subName_3" classes="subName">Discrete Maths</span>
+                                    <span id="subName_3" classes="subName"></span>
                                 </div>
                                 <div class="col s3">
-                                    <span id="classesAttended_3" class="classesAttended">9</span>&nbsp;/&nbsp;<span
-                                        id="totalClasses_3" class="totalClasses">11</span>
+                                    <span id="classesAttended_3" class="classesAttended"></span>&nbsp;/&nbsp;<span
+                                        id="totalClasses_3" class="totalClasses"></span>
                                 </div>
                                 <div class="col s3">
-                                  <span id="per_3">77%</span>
+                                  <span id="per_3"></span>
                                 </div>
                             </div>
                         </div>
@@ -321,7 +321,8 @@
                     $("#classesAttended_"+(i+1)).text(pcount);
                     $("#totalClasses_"+(i+1)).text(pcount+acount);
                     $("#totalClasses_"+(i+1)).text(pcount+acount);
-                    $("#per_"+(i+1)).text(Math.round((pcount/(pcount+acount)*100))+"%");
+                  var totalcount=pcount+acount;
+                    $("#per_"+(i+1)).text(Math.round(pcount*100/totalcount)+"%");
                     i++;
                     //console.log(content);
                 }
